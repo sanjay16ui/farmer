@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriTech - AI-Driven Agricultural Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              agri: {
+                bg: '#F8FAF7', // Soft warm white base
+                text: '#1C1C1C', // Charcoal
+                textLight: '#4B5563', // Muted text
+                green: '#145A32', // Deep Forest Green
+                greenGlow: '#22c55e', // Vibrant green for glows
+                greenLight: '#dcfce7',
+                brown: '#8B5E3C', // Earth Brown
+                brownGlow: '#f59e0b', // Amber/Gold for glows
+                brownLight: '#fef3c7',
+                teal: '#0E7490', // Teal Blue
+                tealGlow: '#06b6d4', // Cyan/Teal for glows
+                tealLight: '#cffafe',
+                border: '#e5e7eb',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'slide-up': 'slideUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'scale-in': 'scaleIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'dash': 'dash 30s linear infinite',
+              'flow-toward': 'flowToward 4s linear infinite', // Faster, directional flow
+              'pulse-subtle': 'pulseSubtle 6s ease-in-out infinite',
+              'float-subtle': 'floatSubtle 6s ease-in-out infinite', // 3px vertical drift
+              'shimmer': 'shimmer 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'sweep': 'sweep 10s ease-in-out infinite', // Slow 10s sweep
+              'breathe': 'breathe 7s ease-in-out infinite', // Slow breathing
+              'ambient': 'ambient 20s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.96)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              dash: {
+                to: {
+                  strokeDashoffset: '1000',
+                },
+              },
+              flowToward: {
+                from: { strokeDashoffset: '24' },
+                to: { strokeDashoffset: '0' },
+              },
+              pulseSubtle: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.7' },
+              },
+              floatSubtle: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-4px)' },
+              },
+              shimmer: {
+                '0%, 90%': { backgroundPosition: '-200% 0', opacity: '0' },
+                '95%': { opacity: '1' },
+                '100%': { backgroundPosition: '200% 0', opacity: '0' },
+              },
+              sweep: {
+                '0%, 90%': { transform: 'translateX(-150%)', opacity: '0' },
+                '92%': { opacity: '0.8' },
+                '100%': { transform: 'translateX(250%)', opacity: '0' },
+              },
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.3' },
+                '50%': { transform: 'scale(1.1)', opacity: '0.5' },
+              },
+              ambient: {
+                '0%': { transform: 'translate(0, 0) scale(1)' },
+                '100%': { transform: 'translate(20px, -20px) scale(1.05)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F8FAF7;
+        color: #1C1C1C;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Clean subtle radial grid for orbit background */
+      .bg-orbit-grid {
+        background-image: 
+          radial-gradient(circle at center, #9ca3af 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at center, black 0%, transparent 60%);
+        -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 60%);
+      }
+      /* Hide scrollbar for cleaner visuals */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      /* Utility for animation delays */
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-500 { animation-delay: 500ms; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
